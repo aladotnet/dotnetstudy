@@ -1,6 +1,6 @@
 namespace DefaultNamespace;
 
-public class creatToDo
+public class ToDo
 {
     public string Title { get; set; }
     public string Description { get; set; }

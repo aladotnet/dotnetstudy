@@ -1,23 +1,25 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+
 using DefaultNamespace;
-int i = 0000001;
-creatToDo creat = new creatToDo();
-Console.WriteLine("um eine to do zu erstelen drücke Enter\n");
+
+int startindex = 1;
+List<string> ToDo = new List<string>();
+ToDo creat = new ToDo();
 
 ConsoleKeyInfo keyInfo = Console.ReadKey();
 
-
-if (keyInfo.Key == ConsoleKey.Enter)
-    do
+while (keyInfo.Key == ConsoleKey.D1)
 {
-    Console.WriteLine("Titel:");
+    Console.WriteLine("\nTitel:");
     creat.Title = Console.ReadLine();
     Console.WriteLine("Description:");
     creat.Description = Console.ReadLine();
     Console.WriteLine("kategorie:");
     creat.category = Console.ReadLine();
-    creat.Id = i+10;
+    creat.Id = startindex + 10;
+
+    ToDo.Add(creat.Title + creat.Description + creat.category + creat.Id);
 
     Console.WriteLine("\n" + creat.Title + "\n"
                       + creat.Description + "\n"
@@ -25,4 +27,4 @@ if (keyInfo.Key == ConsoleKey.Enter)
                       + creat.Id);
     Console.WriteLine("\nmöchtest du kein weiters machen drücke enter");
     keyInfo = Console.ReadKey();
-}while (keyInfo.Key != ConsoleKey.Enter);
+}        
